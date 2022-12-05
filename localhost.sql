@@ -3,6 +3,7 @@ What fields should the API contain?
 
 ID- Not null, primary key, non-auto-increment. Acts as Pokemon ID.
 name - Varchar(30)?
+https://github.com/Skeli789/Dynamic-Pokemon-Expansion/blob/master/graphics/pokeicon/ -FOR MAIN IMAGES, HAS A LICENSE I CAN USE. Don't care if end user uses non-copyrighted images, but for legal reasons, I will use these ones.
 ImageURL - nullable (if null, use unknown icon), URL from the github repo, later conditionally styled to hopefully fit our needs?
 description - Varchar (500)
 primary typing - Not null, Varchar(15). In frontend, put a selection form. Minimizes error, helps conditional styling.
