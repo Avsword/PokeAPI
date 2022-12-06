@@ -14,7 +14,7 @@ weight - NUMERIC(7,2) kg
 
 CREATE TABLE IF NOT EXISTS pokemon (
     ID smallint primary key not null,
-    name varchar(20),
+    name varchar(20) not null,
     imgurl varchar(2083),
     description varchar(1600),
     primarytyping varchar(10) not null,

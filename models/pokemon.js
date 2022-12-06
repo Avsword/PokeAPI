@@ -1,7 +1,6 @@
 // TODO: Never use airbnb eslint again :D
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable comma-dangle */
-// Expressions won't be used in this file, but passed along to routes.
 /* eslint-disable no-unused-expressions */
 
 /*
@@ -39,15 +38,15 @@ const pokemonModel = {
     }),
   deleteById: (id) =>
     new Promise((resolve, reject) => {
-      connection.query('DELETE FROM pokemon WHERE id=?', id, (err, result) => {
+      connection.query('DELETE FROM pokemon WHERE id=?;', id, (err, result) => {
         err ? reject(err) : resolve(result);
       });
     }),
   updateById: (pokemon) =>
     new Promise((resolve, reject) => {
       connection.query(
-        'UPDATE pokemon SET name=?, imgurl=?, description=?, primarytyping=?, secondarytyping=?, height=?, weight=? WHERE ID=?',
-
+        'UPDATE pokemon SET name=?, imgurl=?, description=?, primarytyping=?, secondarytyping=?, height=?, weight=? WHERE ID=?;',
+        // Sanitize multiple with an array.
         [
           pokemon.name,
           pokemon.imgurl,

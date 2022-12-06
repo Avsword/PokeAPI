@@ -1,1 +1,41 @@
 GET http://localhost:3000/api/pokemon HTTP/1.1
+
+###
+GET http://localhost:3000/api/pokemon/3001 HTTP/1.1
+
+###
+GET http://localhost:3000/api/pokemon/2000 HTTP/1.1
+
+###
+POST http://localhost:3000/api/pokemon HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "posted",
+    "imgurl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Felements.envato.com%2Fneutral-face-LYQ7W5&psig=AOvVaw0p5Kjckkw83BKN3LbQxxLl&ust=1670435051292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKiVktHF5fsCFQAAAAAdAAAAABAE",
+    "description": "This has been posted from REST file",
+    "primarytyping": "Normal",
+    "secondarytyping": null,
+    "height": 100,
+    "weight": null,
+    "ID": 3002
+}
+
+###
+PUT http://localhost:3000/api/pokemon HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Updated",
+    "imgurl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Felements.envato.com%2Fneutral-face-LYQ7W5&psig=AOvVaw0p5Kjckkw83BKN3LbQxxLl&ust=1670435051292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKiVktHF5fsCFQAAAAAdAAAAABAE",
+    "description": "This has been posted and updated from REST file",
+    "primarytyping": "Normal",
+    "secondarytyping": "null",
+    "height": 5,
+    "weight": null,
+    "ID": 3001
+}
+
+
+###
+DELETE http://localhost:3000/api/pokemon/3004

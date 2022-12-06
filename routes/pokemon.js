@@ -10,7 +10,6 @@ Router basically just tells the API which controller function it should "route"
 TLDR: Router handles routing.
 */
 
-// TODO: Add the controller functions
 const {
   getAll,
   getById,
@@ -19,13 +18,20 @@ const {
   updateById,
 } = require('../controllers/pokemon');
 
-// TODO: assign controller functions to different api endpoints.
+// Assign controller functions to different api endpoints.
 // General get route to fetch ALL pokemon
 router.get('/', getAll);
 
 // Fetch by Pokédex id.
-router.get('/:id', (req, res) => {
-  res.send([req.params]);
-});
+router.get('/:id', getById);
+
+// Posting a new pokemon to the database
+router.post('/', postNewPokemon);
+
+// Updating new pokemon by id
+router.put('/', updateById);
+
+// Deleting by id
+router.delete('/:id', deleteById);
 
 module.exports = router;

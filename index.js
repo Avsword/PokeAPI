@@ -1,5 +1,6 @@
 const app = require('./app');
-//req  for dotenv
+
+// required for port
 require('dotenv').config();
 
 const port = process.env.MYSQL_PORT || 3000;
