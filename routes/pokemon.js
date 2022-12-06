@@ -11,11 +11,21 @@ TLDR: Router handles routing.
 */
 
 // TODO: Add the controller functions
+const {
+  getAll,
+  getById,
+  postNewPokemon,
+  deleteById,
+  updateById,
+} = require('../controllers/pokemon');
 
 // TODO: assign controller functions to different api endpoints.
+// General get route to fetch ALL pokemon
+router.get('/', getAll);
 
-router.get('/', (req, res) => {
-  res.send(['kakka', 'Paris', 'Tampere']);
+// Fetch by Pokédex id.
+router.get('/:id', (req, res) => {
+  res.send([req.params]);
 });
 
 module.exports = router;

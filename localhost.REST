@@ -1,1 +1,1 @@
-GET 
+GET http://localhost:3000/api/pokemon HTTP/1.1
