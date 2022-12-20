@@ -16,6 +16,9 @@ const {
   postNewPokemon,
   deleteById,
   updateById,
+  getAllWithPrimaryTyping,
+  getWithinHeightRange,
+  getWithinWeightRange,
 } = require('../controllers/pokemon');
 
 // Assign controller functions to different api endpoints.
@@ -24,6 +27,15 @@ router.get('/', getAll);
 
 // Fetch by Pokédex id.
 router.get('/:id', getById);
+
+// Get for primary typing
+router.get('/typing/:typing', getAllWithPrimaryTyping);
+
+// Get all pokemon in a range of height
+router.get('/height/:min&:max', getWithinHeightRange);
+
+// Get all pokemon in a range of weight
+router.get('/weight/:min&:max', getWithinWeightRange);
 
 // Posting a new pokemon to the database
 router.post('/', postNewPokemon);

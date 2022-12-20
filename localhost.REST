@@ -1,10 +1,21 @@
 GET http://localhost:3000/api/pokemon HTTP/1.1
 
-###
-GET http://localhost:3000/api/pokemon/3001 HTTP/1.1
+
 
 ###
 GET http://localhost:3000/api/pokemon/2000 HTTP/1.1
+
+
+//Get by typing
+###
+GET http://localhost:3000/api/pokemon/typing/grass HTTP/1.1¨
+
+###
+GET http://localhost:3000/api/pokemon/typing/test HTTP/1.1
+
+//Get within a height range
+###
+GET http://localhost:3000/api/pokemon/height/0.6&6 HTTP/1.1
 
 ###
 POST http://localhost:3000/api/pokemon HTTP/1.1
@@ -12,7 +23,7 @@ Content-Type: application/json
 
 {
     "name": "posted",
-    "imgurl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Felements.envato.com%2Fneutral-face-LYQ7W5&psig=AOvVaw0p5Kjckkw83BKN3LbQxxLl&ust=1670435051292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKiVktHF5fsCFQAAAAAdAAAAABAE",
+    "imgurl": "https://elements-cover-images-0.imgix.net/df403ae4-755d-495e-9dfd-97e6e964ecb9?auto=compress%2Cformat&fit=max&w=1170&s=a3ac4bcbd3f921d99e0eab9252ba3a6f",
     "description": "This has been posted from REST file",
     "primarytyping": "Normal",
     "secondarytyping": null,
@@ -31,11 +42,14 @@ Content-Type: application/json
     "description": "This has been posted and updated from REST file",
     "primarytyping": "Normal",
     "secondarytyping": "null",
-    "height": 5,
+    "height": 6,
     "weight": null,
-    "ID": 3001
+    "ID": 3000
 }
 
 
 ###
-DELETE http://localhost:3000/api/pokemon/3004
+DELETE http://localhost:3000/api/pokemon/4004
+
+###
+GET http://localhost:3000/api/pokemon/4004 HTTP/1.1

@@ -62,6 +62,36 @@ const pokemonModel = {
         }
       );
     }),
+  getAllWithPrimaryTyping: (typing) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        'SELECT * FROM pokemon WHERE primarytyping = ?',
+        typing,
+        (err, result) => {
+          err ? reject(err) : resolve(result);
+        }
+      );
+    }),
+  getWithinHeightRange: (min, max) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        'SELECT * FROM pokemon WHERE height >= ? AND height <= ?',
+        [min, max],
+        (err, result) => {
+          err ? reject(err) : resolve(result);
+        }
+      );
+    }),
+  getWithinWeightRange: (min, max) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        'SELECT * FROM pokemon WHERE weight >= ? AND weight <= ?',
+        [min, max],
+        (err, result) => {
+          err ? reject(err) : resolve(result);
+        }
+      );
+    }),
 };
 
 module.exports = pokemonModel;
