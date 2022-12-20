@@ -457,7 +457,6 @@ describe('In the PUT endpoint', () => {
   // Before all Put tests, we'll create a fake pokemon that we'll update.
   const postid = 4006;
   beforeAll(async () => {
-    console.log('BEFORE ALL: ');
     const fakemon = {
       name: 'PUTtest',
       description: 'description',
