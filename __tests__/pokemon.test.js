@@ -455,7 +455,7 @@ describe('In the DELETE endpoint', () => {
 
 describe('In the PUT endpoint', () => {
   // Before all Put tests, we'll create a fake pokemon that we'll update.
-  let postid = 4006;
+  const postid = 4006;
   beforeAll(async () => {
     console.log('BEFORE ALL: ');
     const fakemon = {
