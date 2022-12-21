@@ -1,0 +1,43 @@
+@import '../node_modules/pixel-borders/src/styles/pixel-borders.scss';
+
+.OuterRadius {
+  padding: 6px;
+  @include pixel-borders(
+    $corner-size: 2,
+    $border-size: 2px,
+    $border-color: #000
+  );
+
+  border-style: solid;
+  border-width: 6px;
+  border-radius: 40px;
+  border-color: #000;
+}
+
+.LayoutNav {
+  @include pixel-borders(
+    $corner-size: 2,
+    $border-size: 6px,
+    $border-color: #000,
+    /* $border-inset-color: rgba(0, 0, 0, 0.3) */
+  );
+
+  border-style: solid;
+  border-width: 6px;
+  border-radius: 40px;
+  border-color: #000;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    li {
+      position: relative;
+      font-size: 2em;
+      list-style: none;
+    }
+  }
+}
+
+// https://nigelotoole.github.io/pixel-borders/ We'll use this handy dandy package for the nav bar
+// Borders :)

@@ -1,0 +1,22 @@
+.Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Thanks to https://stripesgenerator.com/. I would've figured this out on my own, but they
+  saved me valuable time and mental health
+  */
+  background-image: linear-gradient(
+    180deg,
+    #7ba573 25%,
+    #4a7342 25%,
+    #4a7342 50%,
+    #7ba573 50%,
+    #7ba573 75%,
+    #4a7342 75%,
+    #4a7342 100%
+  );
+  background-size: 40px 40px;
+
+  height: 100vh;
+}

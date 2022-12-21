@@ -17,9 +17,15 @@ const app = express();
 app.use(express.json());
 
 // Middleware for using cors. We want only certain origins to allow to create fetch's
+/*
+
+      'http://localhost:3000',
+      'https://pokedex-api-88gv.onrender.com',
+      'https://editor.swagger.io',
+*/
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://pokedex-api-88gv.onrender.com'],
+    origin: [],
   })
 );
 
