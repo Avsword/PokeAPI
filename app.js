@@ -18,7 +18,7 @@ app.use('/api/pokemon', pokeRouter);
 // Health status for Render
 
 app.get('/health', (req, res) => {
-  res.status(200).send('OK');
+  res.send('OK');
 });
 
 module.exports = app;
