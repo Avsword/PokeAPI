@@ -15,4 +15,10 @@ app.use(express.json());
 // Router handles passing requests further.
 app.use('/api/pokemon', pokeRouter);
 
+// Health status for Render
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 module.exports = app;
