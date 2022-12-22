@@ -23,11 +23,7 @@ app.use(express.json());
       'https://pokedex-api-88gv.onrender.com',
       'https://editor.swagger.io',
 */
-app.use(
-  cors({
-    origin: [],
-  })
-);
+app.use(cors());
 
 // Router handles passing requests further.
 app.use('/api/pokemon', pokeRouter);
