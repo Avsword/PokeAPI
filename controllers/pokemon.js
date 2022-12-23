@@ -53,6 +53,25 @@ const getById = async (req, res) => {
   }
 };
 
+const getByName = async (req, res) => {
+  const validateName = Joi.string().min(2).required();
+  const err = validateName.validate(req.params.name).error;
+  if (err) {
+    res.status(404).send(err.details[0].message);
+  } else {
+    try {
+      const resp = await pokeModel.getByName(req.params.name);
+      if (resp.length > 0) {
+        res.send(resp);
+      } else {
+        res.status(404).send('No matching name');
+      }
+    } catch (error) {
+      res.status(500).send('Something went wrong');
+    }
+  }
+};
+
 const getAllWithPrimaryTyping = async (req, res) => {
   const validateTyping = Joi.string().min(3).max(10).required();
   const err = validateTyping.validate(req.params.typing).error;
@@ -218,4 +237,5 @@ module.exports = {
   getAllWithPrimaryTyping,
   getWithinHeightRange,
   getWithinWeightRange,
+  getByName,
 };

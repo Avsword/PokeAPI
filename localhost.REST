@@ -13,6 +13,12 @@ GET http://localhost:3000/api/pokemon/typing/grass HTTP/1.1¨
 ###
 GET http://localhost:3000/api/pokemon/typing/test HTTP/1.1
 
+###
+GET http://localhost:3000/api/pokemon/name/bulbasaur HTTP/1.1
+
+###
+GET http://localhost:3000/api/pokemon/name/test HTTP/1.1
+
 //Get within a height range
 ###
 GET http://localhost:3000/api/pokemon/height/0.6&6 HTTP/1.1
@@ -29,7 +35,7 @@ Content-Type: application/json
     "secondarytyping": null,
     "height": 100,
     "weight": null,
-    "ID": 3002
+    "ID": 3003
 }
 
 ###

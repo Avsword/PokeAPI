@@ -462,6 +462,19 @@
   height: 80vh;
   margin: 0 0.8em 0 0;
   float: left;
+  /* :last-child {
+    img {
+
+    }
+  } */
+}
+.Main .dex .dexImagesBox :last-child img {
+  padding-bottom: 20px !important;
+  content: "";
+  width: 128px;
+  background-color: #609880;
+  position: relative;
+  display: block;
 }
 .Main .dex .dexImagesBox .dexPicture {
   z-index: 1;

@@ -19,6 +19,7 @@ const {
   getAllWithPrimaryTyping,
   getWithinHeightRange,
   getWithinWeightRange,
+  getByName,
 } = require('../controllers/pokemon');
 
 // Assign controller functions to different api endpoints.
@@ -27,6 +28,9 @@ router.get('/', getAll);
 
 // Fetch by Pokédex id.
 router.get('/:id', getById);
+
+// Fetch by Pokémon name.
+router.get('/name/:name', getByName);
 
 // Get for primary typing
 router.get('/typing/:typing', getAllWithPrimaryTyping);

@@ -92,6 +92,16 @@ const pokemonModel = {
         }
       );
     }),
+  getByName: (name) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        'SELECT * FROM pokemon WHERE name LIKE ?',
+        name,
+        (err, result) => {
+          err ? reject(err) : resolve(result);
+        }
+      );
+    }),
 };
 
 module.exports = pokemonModel;

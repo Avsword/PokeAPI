@@ -34,9 +34,8 @@ export default function Add() {
     'Fairy',
   ];
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    console.log(id, name, description, height, weight, imgPreview);
     const newPokemon = {
       ID: parseInt(id),
       name: name.toLowerCase(),
@@ -48,7 +47,24 @@ export default function Add() {
       weight: weight,
     };
 
-    axios.post(url, newPokemon).then(alert('Pokémon has been posted!'));
+    await axios
+      .post(url, newPokemon)
+      .then((res) => {
+        console.log(res);
+        if ((res.status = 201)) {
+          alert(`${name} has been registered to your Pokédex!`);
+          window.location.reload(false);
+        }
+      })
+      .catch((err) => {
+        console.error('Error response:');
+        console.error(err.response.data); // ***
+        console.error(err.response.status); // ***
+        console.error(err.response.headers); // ***
+        alert(
+          'Something went wrong with the request, check the fields again and see the console for more details'
+        );
+      });
   };
   return (
     <div className='addNewPokemon'>
