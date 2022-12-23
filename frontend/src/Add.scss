@@ -1,0 +1,177 @@
+@import '../node_modules/pixel-borders/src/styles/pixel-borders.scss';
+$imgSize: 128px;
+$boxWidth: 90%;
+.addNewPokemon {
+  .mainTextWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .addMainText {
+      width: fit-content;
+
+      // Perfection
+      @include pixel-borders(
+        $corner-size: 2,
+        $border-size: 2px,
+        $border-color: #000
+      );
+      border-style: solid;
+      border-width: 8px;
+      border-radius: 40px;
+      border-color: #000;
+      background-color: aliceblue;
+      background-clip: padding-box;
+      text-align: center;
+      margin: 1em;
+      padding: 1em;
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+
+  .addMainBox {
+    // Perfection
+    @include pixel-borders(
+      $corner-size: 2,
+      $border-size: 2px,
+      $border-color: #000
+    );
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 40px;
+    border-color: #000;
+
+    background-color: #e5e5e5;
+    background-clip: padding-box;
+    width: $boxWidth;
+    height: fit-content;
+    margin: auto;
+    padding: 0.5em;
+    border-radius: 0px 0px 20px 0px;
+    box-shadow: inset -2em -1.33em #fafafa;
+    .imageInput {
+      position: relative;
+      top: 20px;
+      right: $imgSize;
+      width: calc($imgSize/1.1);
+    }
+    .imagePreview {
+      height: $imgSize;
+      width: $imgSize;
+      position: relative;
+      image-rendering: pixelated;
+      object-fit: cover;
+      object-position: 0 15%;
+    }
+    .addHeightAndWeight {
+      display: block;
+      float: right;
+      padding: 0.5em 0em 0em 0.5em;
+      background-color: #fafafa;
+      position: relative;
+      bottom: calc($imgSize/2.5);
+      /* right: calc($imgSize/8); */
+
+      border-radius: 1em 0em;
+      .height {
+        height: 20px;
+      }
+      .weight {
+        height: 20px;
+      }
+      input {
+        float: right;
+        width: 50px;
+        height: 10px;
+      }
+    }
+    .idField,
+    .textField,
+    .primaryTyping,
+    .secondaryTyping {
+      width: fit-content;
+      left: $imgSize;
+      margin-left: 6px;
+      position: relative;
+      top: -$imgSize;
+      input {
+        width: 50px;
+      }
+    }
+    /*   .textField {
+      width: fit-content;
+      left: $imgSize;
+      margin-left: 6px;
+      position: relative;
+      top: -$imgSize;
+      input {
+        width: 50px;
+      }
+    } */
+  }
+}
+.addDescription {
+  // Perfection
+  @include pixel-borders(
+    $corner-size: 2,
+    $border-size: 2px,
+    $border-color: #000
+  );
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 40px;
+  border-color: #000;
+  background-color: #fafafa;
+  background-clip: padding-box;
+
+  margin: auto;
+  width: 80%;
+  height: $imgSize;
+  padding: 1em 0em 0em 0em;
+
+  // By far the hardest part of this...
+  .descriptionTextArea {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: $imgSize;
+    margin: 0;
+    padding: 4px;
+    background-clip: padding-box;
+    overflow-y: auto; /*resets IE*/
+    overflow-x: hidden; /*resets IE*/
+    position: relative;
+    top: calc(($imgSize/-4) + 0.5em);
+
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+  }
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+input {
+  margin-left: 0.25em;
+}
+
+@media (min-width: 801px) {
+  $boxWidth: 40%;
+  .addNewPokemon {
+    width: $boxWidth;
+    margin: auto;
+  }
+}

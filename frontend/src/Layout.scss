@@ -4,7 +4,7 @@
   padding: 6px;
   @include pixel-borders(
     $corner-size: 2,
-    $border-size: 2px,
+    $border-size: 3px,
     $border-color: #000
   );
 
@@ -26,11 +26,13 @@
   border-width: 6px;
   border-radius: 40px;
   border-color: #000;
+  background-color: aliceblue;
   ul {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3em;
+    padding-left: 0;
     li {
       position: relative;
       font-size: 2em;

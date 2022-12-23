@@ -1,6 +1,6 @@
 import { Outlet, Link } from 'react-router-dom';
 import './Layout.css';
-import './images/gFrontSprite412Egg.png';
+
 const styling = { textDecoration: 'none', color: 'black' };
 const Layout = () => {
   return (

@@ -395,54 +395,193 @@
   background-color: #e45b3f;
 }
 
-.OuterRadius {
-  padding: 6px;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #000;
-  border-image-slice: 4;
-  border-image-width: 2;
-  border-image-outset: 0;
-  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
-  border-style: solid;
-  border-width: 6px;
-  border-radius: 40px;
-  border-color: #000;
-}
-@supports (border-image-source: none) {
-  .OuterRadius {
-    border-radius: 16px;
-  }
-}
-
-.LayoutNav {
-  border-style: solid;
-  border-width: 6px;
-  border-color: #000;
-  border-image-slice: 4;
-  border-image-width: 2;
-  border-image-outset: 0;
-  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
-  border-style: solid;
-  border-width: 6px;
-  border-radius: 40px;
-  border-color: #000;
-  background-color: aliceblue;
-}
-@supports (border-image-source: none) {
-  .LayoutNav {
-    border-radius: 28px;
-  }
-}
-.LayoutNav ul {
+.addNewPokemon .mainTextWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3em;
-  padding-left: 0;
 }
-.LayoutNav ul li {
+.addNewPokemon .mainTextWrapper .addMainText {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
+  border-style: solid;
+  border-width: 8px;
+  border-radius: 40px;
+  border-color: #000;
+  background-color: aliceblue;
+  background-clip: padding-box;
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+}
+@supports (border-image-source: none) {
+  .addNewPokemon .mainTextWrapper .addMainText {
+    border-radius: 12px;
+  }
+}
+.addNewPokemon .mainTextWrapper .addMainText h1 {
+  text-align: center;
+}
+.addNewPokemon .addMainBox {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 40px;
+  border-color: #000;
+  background-color: #e5e5e5;
+  background-clip: padding-box;
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 0.5em;
+  border-radius: 0px 0px 20px 0px;
+  box-shadow: inset -2em -1.33em #fafafa;
+  /*   .textField {
+    width: fit-content;
+    left: $imgSize;
+    margin-left: 6px;
+    position: relative;
+    top: -$imgSize;
+    input {
+      width: 50px;
+    }
+  } */
+}
+@supports (border-image-source: none) {
+  .addNewPokemon .addMainBox {
+    border-radius: 12px;
+  }
+}
+.addNewPokemon .addMainBox .imageInput {
   position: relative;
-  font-size: 2em;
-  list-style: none;
-}/*# sourceMappingURL=Layout.css.map */
+  top: 20px;
+  right: 128px;
+  width: 116.3636363636px;
+}
+.addNewPokemon .addMainBox .imagePreview {
+  height: 128px;
+  width: 128px;
+  position: relative;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: pixelated;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 15%;
+     object-position: 0 15%;
+}
+.addNewPokemon .addMainBox .addHeightAndWeight {
+  display: block;
+  float: right;
+  padding: 0.5em 0em 0em 0.5em;
+  background-color: #fafafa;
+  position: relative;
+  bottom: 51.2px;
+  /* right: calc($imgSize/8); */
+  border-radius: 1em 0em;
+}
+.addNewPokemon .addMainBox .addHeightAndWeight .height {
+  height: 20px;
+}
+.addNewPokemon .addMainBox .addHeightAndWeight .weight {
+  height: 20px;
+}
+.addNewPokemon .addMainBox .addHeightAndWeight input {
+  float: right;
+  width: 50px;
+  height: 10px;
+}
+.addNewPokemon .addMainBox .idField,
+.addNewPokemon .addMainBox .textField,
+.addNewPokemon .addMainBox .primaryTyping,
+.addNewPokemon .addMainBox .secondaryTyping {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 128px;
+  margin-left: 6px;
+  position: relative;
+  top: -128px;
+}
+.addNewPokemon .addMainBox .idField input,
+.addNewPokemon .addMainBox .textField input,
+.addNewPokemon .addMainBox .primaryTyping input,
+.addNewPokemon .addMainBox .secondaryTyping input {
+  width: 50px;
+}
+
+.addDescription {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 40px;
+  border-color: #000;
+  background-color: #fafafa;
+  background-clip: padding-box;
+  margin: auto;
+  width: 80%;
+  height: 128px;
+  padding: 1em 0em 0em 0em;
+}
+@supports (border-image-source: none) {
+  .addDescription {
+    border-radius: 12px;
+  }
+}
+.addDescription .descriptionTextArea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 128px;
+  margin: 0;
+  padding: 4px;
+  background-clip: padding-box;
+  overflow-y: auto; /*resets IE*/
+  overflow-x: hidden; /*resets IE*/
+  position: relative;
+  top: calc(-32px + 0.5em);
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  resize: none; /*remove the resize handle on the bottom right*/
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+input {
+  margin-left: 0.25em;
+}
+
+@media (min-width: 801px) {
+  .addNewPokemon {
+    width: 40%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=Add.css.map */
