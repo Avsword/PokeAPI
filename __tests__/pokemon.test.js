@@ -10,7 +10,7 @@ const request = require('supertest');
 const app = require('../app');
 const connection = require('../db/connection');
 
-describe('In the GET endpoint (Largest)', () => {
+describe('In the GET endpoint ', () => {
   test('Basic GET should return 200', (done) => {
     request(app).get('/api/pokemon').expect(200).end(done);
   });
@@ -140,6 +140,43 @@ describe('In the GET endpoint (Largest)', () => {
     // Jest should just remove all negative numbers -> 404 code.
     const res = await request(app).get('/api/pokemon/weight/-0.2&-0.1');
     expect(res.status).toEqual(404);
+  });
+
+  test('Should return 404 with bad name', async () => {
+    const res = await request(app)
+      .get('/api/pokemon/name/9001')
+      .set('Accept', 'application/json');
+    expect(res.status).toEqual(404);
+    expect(res.text).toContain('No matching name');
+  });
+  test('Shouldnt allow too short of a get name', async () => {
+    const res = await request(app)
+      .get('/api/pokemon/name/a')
+      .set('Accept', 'application/json');
+    expect(res.status).toEqual(404);
+    expect(res.text).toContain('length must be at least');
+  });
+  test('Should return bulbasaur with name bulbasaur', async () => {
+    const res = await request(app)
+      .get('/api/pokemon/name/bulbasaur')
+      .set('Accept', 'application/json');
+    expect(res.status).toEqual(200);
+    expect(res.body).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          ID: 1,
+          name: 'bulbasaur',
+          imgurl:
+            'https://github.com/Skeli789/Dynamic-Pokemon-Expansion/blob/master/graphics/pokeicon/gIconSprite001Bulbasaur.png?raw=true',
+          description:
+            'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
+          primarytyping: 'grass',
+          secondarytyping: 'poison',
+          height: 0.7,
+          weight: 6.9,
+        }),
+      ])
+    );
   });
 });
 
