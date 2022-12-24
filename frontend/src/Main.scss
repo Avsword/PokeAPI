@@ -69,7 +69,7 @@ $imgSize: 128px;
       z-index: 2;
       width: fit-content;
       height: $dexHeight;
-      margin: 0 0.8em 0 0;
+      /* margin: 0 0.8em 0 0; */
       float: left;
       .dexPicture {
         z-index: 1;
@@ -105,7 +105,7 @@ $imgSize: 128px;
         .dexData {
           display: flex;
           align-items: center;
-          gap: 1.5em;
+          gap: 12px;
           // Remove button styling
           background: none;
           color: inherit;
@@ -119,12 +119,17 @@ $imgSize: 128px;
           font-size: calc($imgSize / 4) + 'px';
           // Egg
           img {
-            height: calc($imgSize / 4);
+            width: 2px;
           }
         }
         transition: all 1s ease-in-out;
         background-color: #eff739;
         border: 0px;
+
+        .pokemonName {
+          position: relative;
+          float: right;
+        }
         :hover {
           transition: linear;
           background-color: white;
@@ -136,7 +141,10 @@ $imgSize: 128px;
 }
 
 .infoBackground {
-  button {
+  height: 100%;
+  width: 100vw;
+
+  .backButton {
     background: none;
     color: inherit;
     border: none;
@@ -152,9 +160,21 @@ $imgSize: 128px;
       top: $imgSize;
     }
   }
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4);
+  .editButton {
+    background: none;
+    color: inherit;
+    border: none;
+
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: black;
+
+    span {
+      font-size: 2rem;
+    }
+  }
+
   .dexPicture {
     z-index: 1;
     width: fit-content;
@@ -176,5 +196,26 @@ $imgSize: 128px;
     width: 80%;
     background-color: white;
     text-align: center;
+  }
+  .releaseButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+
+    button {
+      background-color: #000;
+
+      color: inherit;
+      border: none;
+      padding: 2px;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      border-radius: 5px;
+      color: white;
+      font-size: 25px;
+      margin-bottom: 1em;
+    }
   }
 }

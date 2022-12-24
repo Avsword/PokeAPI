@@ -2,6 +2,7 @@ import './Main.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ReactComponent as Svg } from './images/loader.svg';
+import Edit from './Edit';
 const egg = require('./images/egg.png');
 
 export default function Main() {
@@ -36,7 +37,8 @@ export default function Main() {
                 }}
               >
                 <img src={egg} alt='Pokemon egg'></img>
-                <h1>No {pokemon.ID}</h1>
+                <h1>No.{pokemon.ID}</h1>
+
                 <h1>{pokemon.name.toUpperCase()}</h1>
               </button>
             </div>
@@ -91,10 +93,32 @@ function InfoBox(props) {
   const clickhandler = props.clickhandler;
   const pokemon = props.pokemon;
   const img = pokemon.imgurl;
+  const [showEdit, setShowEdit] = useState(false);
 
-  return (
+  const release = async (pokemon) => {
+    axios
+      .delete(`https://pokedex-api-88gv.onrender.com/api/pokemon/${pokemon.ID}`)
+      .then((res) => {
+        if (res.status === 200) {
+          alert(`${pokemon.name} has been released`);
+          clickhandler();
+        }
+      })
+      .catch((err) => {
+        console.error('Error response:');
+        console.error(err.response.data); // ***
+        console.error(err.response.status); // ***
+        console.error(err.response.headers); // ***
+        alert(
+          'Something went wrong with the request, check the fields again and see the console for more details'
+        );
+      });
+  };
+
+  return !showEdit ? (
     <div className='infoBackground'>
       <button
+        className='backButton'
         onClick={() => {
           clickhandler();
         }}
@@ -108,16 +132,49 @@ function InfoBox(props) {
           <Svg></Svg>
         )}
       </div>
+
       <div className='infoBox'>
         <h1>{pokemon.name.toUpperCase()}</h1>
+        {pokemon.secondarytyping ? (
+          <h2>
+            {pokemon.primarytyping.toUpperCase()}/
+            {pokemon.secondarytyping.toUpperCase()}
+          </h2>
+        ) : (
+          <h2>{pokemon.primarytyping.toUpperCase()}</h2>
+        )}
+        <button
+          className='editButton'
+          onClick={() => {
+            setShowEdit(!showEdit);
+          }}
+        >
+          <span className='material-symbols-outlined'>edit</span>
+        </button>
         <p>{pokemon.description}</p>
         <div className='heightAndWeight'>
           <h2>
-            This Pokémon weighs {pokemon.weight} kilograms and is{' '}
-            {pokemon.height} meters tall!
+            {pokemon.weight == null
+              ? pokemon.height == null
+                ? `The weight and height for this Pokémon are unknown`
+                : `The weight for this pokémon is ${pokemon.weight} KG and it's ${pokemon.height} meters tall!`
+              : pokemon.height == null
+              ? `This Pokémon weighs ${pokemon.weight} kilograms and it's height is unknown`
+              : `The weight for this pokémon is ${pokemon.weight} KG and it's ${pokemon.height} meters tall!`}
           </h2>
         </div>
       </div>
+      <div className='releaseButton'>
+        <button
+          onClick={() => {
+            release(pokemon);
+          }}
+        >
+          Release?
+        </button>
+      </div>
     </div>
+  ) : (
+    <Edit pokemon={pokemon} handleBack={clickhandler}></Edit>
   );
 }

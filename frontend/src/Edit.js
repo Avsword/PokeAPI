@@ -1,18 +1,28 @@
 import './Add.css';
 import { useState } from 'react';
 import axios from 'axios';
-const url = 'https://pokedex-api-88gv.onrender.com/api/pokemon';
-export default function Add() {
-  const [imgPreview, setImgPreview] = useState(
-    'https://github.com/Skeli789/Dynamic-Pokemon-Expansion/blob/master/graphics/pokeicon/gIconSprite000None.png?raw=true'
+
+export default function Edit(props) {
+  const mon = props.pokemon;
+  const back = props.handleBack;
+  const url = `https://pokedex-api-88gv.onrender.com/api/pokemon/`;
+  const [imgPreview, setImgPreview] = useState(mon.imgurl);
+  const [description, setDescription] = useState(mon.description);
+  const [id, setId] = useState(mon.ID);
+  const [name, setName] = useState(
+    mon.name.charAt(0).toUpperCase() + mon.name.slice(1)
   );
-  const [description, setDescription] = useState('');
-  const [id, setId] = useState(null);
-  const [name, setName] = useState('');
-  const [height, setHeight] = useState(null);
-  const [weight, setWeight] = useState(null);
-  const [primaryTyping, setPrimaryTyping] = useState('normal');
-  const [secondaryTyping, setSecondaryTyping] = useState(null);
+  const [height, setHeight] = useState(mon.height);
+  const [weight, setWeight] = useState(mon.weight);
+  const [primaryTyping, setPrimaryTyping] = useState(
+    mon.primarytyping.charAt(0).toUpperCase() + mon.primarytyping.slice(1)
+  );
+  const [secondaryTyping, setSecondaryTyping] = useState(
+    mon.secondarytyping
+      ? mon.secondarytyping.charAt(0).toUpperCase() +
+          mon.secondarytyping.slice(1)
+      : mon.secondarytyping
+  );
   const typings = [
     'Normal',
     'Fire',
@@ -41,17 +51,18 @@ export default function Add() {
       name: name.toLowerCase(),
       imgurl: imgPreview,
       description: description,
-      primarytyping: primaryTyping,
-      secondarytyping: secondaryTyping === '' ? null : secondaryTyping,
+      primarytyping: primaryTyping.toLowerCase(),
+      secondarytyping:
+        secondaryTyping === '' ? null : secondaryTyping.toLowerCase(),
       height: height,
       weight: weight,
     };
 
     await axios
-      .post(url, newPokemon)
+      .put(url, newPokemon)
       .then((res) => {
         if ((res.status = 201)) {
-          alert(`${name} has been registered to your Pokédex!`);
+          alert(`${name} has been updated!`);
           window.location.reload(false);
         }
       })
@@ -69,7 +80,7 @@ export default function Add() {
     <div className='addNewPokemon'>
       <div className='mainTextWrapper'>
         <div className='addMainText'>
-          <h1>POKÉDEX registration!</h1>
+          <h1>Update the Pokédex!</h1>
           <p>
             For pictures, go to{' '}
             <a
@@ -99,7 +110,7 @@ export default function Add() {
             <input
               className='imageInput'
               type={'link'}
-              placeholder={imgPreview}
+              value={imgPreview}
               onChange={(e) => {
                 setImgPreview(e.target.value);
               }}
@@ -111,6 +122,7 @@ export default function Add() {
             <input
               required
               type={'text'}
+              value={mon.ID}
               onChange={(e) => {
                 setId(e.target.value);
               }}
@@ -122,6 +134,7 @@ export default function Add() {
             <input
               required
               type={'text'}
+              value={name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -148,7 +161,7 @@ export default function Add() {
           <div className='secondaryTyping'>
             <label>2. Typing </label>
             <select
-              value={secondaryTyping}
+              defaultValue={secondaryTyping}
               onChange={(eventObject) => {
                 setSecondaryTyping(eventObject.target.value);
               }}
@@ -168,7 +181,7 @@ export default function Add() {
             <div className='height'>
               <label>Height in meters</label>
               <input
-                placeholder='Unknown'
+                value={height}
                 type={'text'}
                 onChange={(e) => {
                   setHeight(e.target.value);
@@ -179,7 +192,7 @@ export default function Add() {
               {' '}
               <label>Weight in KG</label>
               <input
-                placeholder='Unknown'
+                value={weight}
                 type={'text'}
                 onChange={(e) => {
                   setWeight(e.target.value);
@@ -191,15 +204,23 @@ export default function Add() {
         <div className='addDescription'>
           <textarea
             className='descriptionTextArea'
-            placeholder={'Add your description here'}
+            value={description}
             onChange={(e) => {
               setDescription(e.target.value);
             }}
           ></textarea>
         </div>
-
         <div className='submit'>
-          <input type={'submit'} value='Register!'></input>
+          <input type={'submit'} value='Update!'></input>
+        </div>{' '}
+        <div className='backButton'>
+          <button
+            onClick={() => {
+              back();
+            }}
+          >
+            Back
+          </button>
         </div>
       </form>
     </div>

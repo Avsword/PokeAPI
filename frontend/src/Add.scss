@@ -48,8 +48,9 @@ $boxWidth: 90%;
     height: fit-content;
     margin: auto;
     padding: 0.5em;
+    padding-right: 0;
     border-radius: 0px 0px 20px 0px;
-    box-shadow: inset -2em -1.33em #fafafa;
+    box-shadow: inset 0 -1.33em #fafafa;
     .imageInput {
       position: relative;
       top: 20px;
@@ -67,11 +68,10 @@ $boxWidth: 90%;
     .addHeightAndWeight {
       display: block;
       float: right;
-      padding: 0.5em 0em 0em 0.5em;
+      padding: 0.5em 0.5em 0em 0.5em;
       background-color: #fafafa;
       position: relative;
       bottom: calc($imgSize/2.5);
-      /* right: calc($imgSize/8); */
 
       border-radius: 1em 0em;
       .height {
@@ -96,7 +96,7 @@ $boxWidth: 90%;
       position: relative;
       top: -$imgSize;
       input {
-        width: 50px;
+        width: 100px;
       }
     }
     /*   .textField {
@@ -163,6 +163,52 @@ $boxWidth: 90%;
   justify-content: center;
   align-items: center;
   margin: 1em;
+
+  input {
+    background-color: #000;
+    color: inherit;
+    border: none;
+    padding: 2px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 5px;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 1em;
+  }
+  button {
+    background-color: #000;
+    color: inherit;
+    border: none;
+    padding: 2px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 5px;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 1em;
+  }
+}
+.backButton {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    background-color: #000;
+    color: inherit;
+    border: none;
+    padding: 2px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 5px;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 1em;
+  }
 }
 input {
   margin-left: 0.25em;
