@@ -7,7 +7,6 @@ export default function Search() {
   const [searchType, setSearchType] = useState('id');
   const [Display, setDisplay] = useState(<></>);
   const [displaydata, setDisplayData] = useState(null);
-  const [showLoader, setShowLoader] = useState(false);
   const [id, setId] = useState(0);
   const [name, setName] = useState('');
   const [min, setMin] = useState(0);
@@ -82,22 +81,18 @@ export default function Search() {
   useEffect(() => {
     //getById returns only one
     const getById = async (e) => {
-      setShowLoader(true);
       e.preventDefault();
       await axios
         .get(`https://pokedex-api-88gv.onrender.com/api/pokemon/${id}`)
         .then((res) => {
           setData(res.data);
         })
-        .then(() => {
-          setShowLoader(false);
-        })
+        .then(() => {})
         .catch((error) => {
           errorfunction(error);
         });
     };
     const getByName = async (e) => {
-      setShowLoader(true);
       e.preventDefault();
       await axios
         .get(
@@ -107,15 +102,12 @@ export default function Search() {
           console.log(res);
           setData(res.data[0]);
         })
-        .then(() => {
-          setShowLoader(false);
-        })
+        .then(() => {})
         .catch((error) => {
           errorfunction(error);
         });
     };
     const getByHeight = async (e) => {
-      setShowLoader(true);
       e.preventDefault();
       await console.log(min, max);
       await axios
@@ -126,15 +118,12 @@ export default function Search() {
           console.log(res);
           setData(res.data);
         })
-        .then(() => {
-          setShowLoader(false);
-        })
+        .then(() => {})
         .catch((error) => {
           errorfunction(error);
         });
     };
     const getByWeight = async (e) => {
-      setShowLoader(true);
       e.preventDefault();
       await console.log(min, max);
       await axios
@@ -145,9 +134,7 @@ export default function Search() {
           console.log(res);
           setData(res.data);
         })
-        .then(() => {
-          setShowLoader(false);
-        })
+        .then(() => {})
         .catch((error) => {
           errorfunction(error);
         });
@@ -169,7 +156,7 @@ export default function Search() {
                   setId(e.target.value);
                 }}
               ></input>
-              <input type={'submit'}></input>
+              <input type={'submit'} value='Search!'></input>
             </form>
           </div>
         );
@@ -189,7 +176,7 @@ export default function Search() {
                   setName(e.target.value);
                 }}
               ></input>
-              <input type={'submit'}></input>
+              <input type={'submit'} value='Search!'></input>
             </form>
           </div>
         );
@@ -222,7 +209,7 @@ export default function Search() {
                 }}
               ></input>
               <br></br>
-              <input type={'submit'}></input>
+              <input type={'submit'} value='Search!'></input>
             </form>
           </div>
         );
@@ -255,7 +242,7 @@ export default function Search() {
                 }}
               ></input>
               <br></br>
-              <input type={'submit'}></input>
+              <input type={'submit'} value='Search!'></input>
             </form>
           </div>
         );
@@ -305,8 +292,7 @@ export default function Search() {
         {Display}
       </div>
 
-      {displaydata}
-      {showLoader ? <Svg></Svg> : <></>}
+      {!displaydata ? <Svg></Svg> : displaydata}
     </div>
   );
 }

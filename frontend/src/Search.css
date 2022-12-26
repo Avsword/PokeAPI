@@ -425,6 +425,9 @@
   height: -moz-fit-content;
   height: fit-content;
 }
+.searchBox .selection select {
+  font-family: "VT323", Times, serif;
+}
 .searchBox .displayBox {
   display: flex;
   align-items: center;
@@ -435,7 +438,25 @@
   margin: 0.25em 0;
 }
 .searchBox .displayBox form :last-child {
-  margin: 0.25em 0;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 40px;
+  border-color: #000;
+  background-color: aliceblue;
+  background-clip: padding-box;
+  font-family: "VT323", Times, serif;
+}
+@supports (border-image-source: none) {
+  .searchBox .displayBox form :last-child {
+    border-radius: 12px;
+  }
 }
 
 .idMain {

@@ -21,6 +21,9 @@ $imgSize: 128px;
     align-items: center;
     justify-content: center;
     height: fit-content;
+    select {
+      font-family: 'VT323', Times, serif;
+    }
   }
   .displayBox {
     display: flex;
@@ -29,7 +32,18 @@ $imgSize: 128px;
     height: fit-content;
     margin: 0.25em 0;
     form :last-child {
-      margin: 0.25em 0;
+      @include pixel-borders(
+        $corner-size: 2,
+        $border-size: 2px,
+        $border-color: #000
+      );
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 40px;
+      border-color: #000;
+      background-color: aliceblue;
+      background-clip: padding-box;
+      font-family: 'VT323', Times, serif;
     }
   }
 }
