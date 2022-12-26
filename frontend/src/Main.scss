@@ -225,8 +225,19 @@
     }
   }
 }
-$imgSize: 64px;
+
+$imgSize: 32px;
 @include styling($imgSize);
+
+@media (min-width: 480px) {
+  $imgSize: 48px;
+  @include styling($imgSize);
+}
+
+@media (min-width: 600px) {
+  $imgSize: 64px;
+  @include styling($imgSize);
+}
 @media (min-width: 801px) {
   $imgSize: 128px;
   @include styling($imgSize);
