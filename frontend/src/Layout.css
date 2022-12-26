@@ -438,7 +438,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 1em;
   padding-left: 0;
 }
 .LayoutNav ul li {
@@ -451,6 +451,9 @@
   .OuterRadius {
     max-width: 80%;
     margin: auto;
+  }
+  .OuterRadius .LayoutNav ul {
+    gap: 3em;
   }
   .OuterRadius .LayoutNav ul li {
     font-size: 3em;

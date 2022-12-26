@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 1em;
     padding-left: 0;
     li {
       position: relative;
@@ -48,6 +48,7 @@
     margin: auto;
     .LayoutNav {
       ul {
+        gap: 3em;
         li {
           font-size: 3em;
         }

@@ -58,16 +58,6 @@
       margin-bottom: 50px;
       margin-top: 50px;
       .dexImagesBox {
-        :last-child {
-          img {
-            padding-bottom: 20px !important;
-            content: '';
-            width: $imgSize;
-            background-color: #609880;
-            position: relative;
-            display: block;
-          }
-        }
         z-index: 2;
         width: fit-content;
         height: $dexHeight;
@@ -100,8 +90,8 @@
         margin-right: 0.8em;
 
         .dexEntry {
-          margin-top: calc(($imgSize/(1024/425) / 2));
-          padding-bottom: calc(($imgSize/(1024/425) / 2));
+          /*  margin-top: calc(($imgSize/(1024/425) / 2));
+          padding-bottom: calc(($imgSize/(1024/425) / 2)); */
           width: 100%;
 
           .dexData {
@@ -119,24 +109,27 @@
 
             width: 100%;
             font-size: calc($imgSize / 4);
+            height: $imgSize;
             // Egg
             img {
               width: 2px;
             }
             h1 {
               font-size: calc($imgSize / 4);
+              margin-left: 10px;
             }
           }
-          transition: all 1s ease-in-out;
+          transition: background-color 0.4s ease-in-out;
+          transition: border-radius 0.4s ease-in-out;
           background-color: #eff739;
-          border: 0px;
+          border-radius: 0px;
 
           .pokemonName {
             position: relative;
             float: right;
           }
           :hover {
-            transition: linear;
+            transition: background-color 0.4s ease-in-out;
             background-color: white;
             border-radius: 13px;
           }
@@ -159,7 +152,7 @@
       outline: inherit;
       color: white;
       span {
-        font-size: 5rem;
+        font-size: $imgSize;
         width: fit-content;
         position: relative;
         top: $imgSize;
@@ -183,8 +176,8 @@
     .dexPicture {
       z-index: 1;
       width: fit-content;
-      margin: auto;
       height: $imgSize;
+      margin: auto;
       img {
         z-index: 1;
         height: $imgSize;
@@ -219,14 +212,14 @@
         outline: inherit;
         border-radius: 5px;
         color: white;
-        font-size: 25px;
+
         margin-bottom: 1em;
       }
     }
   }
 }
 
-$imgSize: 32px;
+$imgSize: 48px;
 @include styling($imgSize);
 
 @media (min-width: 480px) {

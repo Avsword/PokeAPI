@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ReactComponent as Svg } from './images/loader.svg';
 import Edit from './Edit';
-const egg = require('./images/egg.png');
 
 export default function Main() {
   const [AllPokemon, setAllPokemon] = useState(null);
@@ -36,10 +35,9 @@ export default function Main() {
                   onDexClick(pokemon);
                 }}
               >
-                <img src={egg} alt='Pokemon egg'></img>
-                <h1>No.{pokemon.ID}</h1>
-
-                <h1>{pokemon.name.toUpperCase()}</h1>
+                <h1>
+                  No.{pokemon.ID} {pokemon.name.toUpperCase()}
+                </h1>
               </button>
             </div>
           );
