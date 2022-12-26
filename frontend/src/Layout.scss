@@ -2,6 +2,7 @@
 
 .OuterRadius {
   padding: 6px;
+
   @include pixel-borders(
     $corner-size: 2,
     $border-size: 3px,
@@ -35,11 +36,22 @@
     padding-left: 0;
     li {
       position: relative;
-      font-size: 2em;
+      font-size: 1em;
       list-style: none;
     }
   }
 }
 
-// https://nigelotoole.github.io/pixel-borders/ We'll use this handy dandy package for the nav bar
-// Borders :)
+@media (min-width: 801px) {
+  .OuterRadius {
+    max-width: 80%;
+    margin: auto;
+    .LayoutNav {
+      ul {
+        li {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+}

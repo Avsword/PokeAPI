@@ -56,6 +56,7 @@ $boxWidth: 90%;
       top: 20px;
       right: $imgSize;
       width: calc($imgSize/1.1);
+      background-color: #e5e5e5;
     }
     .imagePreview {
       height: $imgSize;
@@ -97,18 +98,12 @@ $boxWidth: 90%;
       top: -$imgSize;
       input {
         width: 100px;
+        background-color: #e5e5e5;
+      }
+      select {
+        background-color: #e5e5e5;
       }
     }
-    /*   .textField {
-      width: fit-content;
-      left: $imgSize;
-      margin-left: 6px;
-      position: relative;
-      top: -$imgSize;
-      input {
-        width: 50px;
-      }
-    } */
   }
 }
 .addDescription {

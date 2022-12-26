@@ -443,6 +443,16 @@
 }
 .LayoutNav ul li {
   position: relative;
-  font-size: 2em;
+  font-size: 1em;
   list-style: none;
+}
+
+@media (min-width: 801px) {
+  .OuterRadius {
+    max-width: 80%;
+    margin: auto;
+  }
+  .OuterRadius .LayoutNav ul li {
+    font-size: 3em;
+  }
 }/*# sourceMappingURL=Layout.css.map */

@@ -1,9 +1,10 @@
 @import '../node_modules/pixel-borders/src/styles/pixel-borders.scss';
-$imgSize: 128px;
-.Main {
-  height: 100%;
 
-  /*   background-image: linear-gradient(
+@mixin styling($imgSize) {
+  .Main {
+    height: 100%;
+
+    /*   background-image: linear-gradient(
     180deg,
     #7ba573 25%,
     #4a7342 25%,
@@ -14,208 +15,222 @@ $imgSize: 128px;
     #4a7342 100%
   ); */
 
-  .pokedex-title {
-    ::after {
-      content: '';
-      width: 500px;
-      height: 600px;
-      background: rgba(255, 0, 0, 1);
-    }
-    @include pixel-borders(
-      $corner-size: 2,
-      $border-size: 2px,
-      $border-color: #000
-    );
-    border-style: solid;
-    border-width: 8px;
-    border-radius: 40px;
-    border-color: #000;
-    background-color: aliceblue;
-    background-clip: padding-box;
-    text-align: center;
-
-    margin: auto;
-
-    h1 {
-      margin: 0px;
-      padding: 1em;
-    }
-  }
-
-  .dex {
-    $dexHeight: 80vh;
-    z-index: 1;
-    position: relative;
-    /*  top: -25vh; */
-    height: $dexHeight;
-    width: fit-content;
-
-    overflow-y: scroll;
-    margin: auto;
-    background-color: #eff739;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    .dexImagesBox {
-      :last-child {
-        img {
-          padding-bottom: 20px !important;
-          content: '';
-          width: $imgSize;
-          background-color: #609880;
-          position: relative;
-          display: block;
-        }
+    .pokedex-title {
+      ::after {
+        content: '';
+        width: 500px;
+        height: 600px;
+        background: rgba(255, 0, 0, 1);
       }
-      z-index: 2;
-      width: fit-content;
+      @include pixel-borders(
+        $corner-size: 2,
+        $border-size: 2px,
+        $border-color: #000
+      );
+      border-style: solid;
+      border-width: 8px;
+      border-radius: 40px;
+      border-color: #000;
+      background-color: aliceblue;
+      background-clip: padding-box;
+      text-align: center;
+
+      margin: auto;
+      margin-top: 1em;
+      h1 {
+        margin: 0px;
+        padding: 1em;
+        font-size: calc($imgSize / 2);
+      }
+    }
+
+    .dex {
+      $dexHeight: 80vh;
+      z-index: 1;
+      position: relative;
+      /*  top: -25vh; */
       height: $dexHeight;
-      /* margin: 0 0.8em 0 0; */
-      float: left;
-      .dexPicture {
-        z-index: 1;
-        width: fit-content;
-        margin: 0;
-        height: $imgSize;
-        img {
-          z-index: 1;
-          height: $imgSize;
-          width: $imgSize;
-          position: relative;
-          image-rendering: pixelated;
-          object-fit: cover;
-          object-position: 0 15%;
-        }
-      }
+      width: fit-content;
 
-      /* :last-child {
+      overflow-y: scroll;
+      margin: auto;
+      background-color: #eff739;
+      margin-bottom: 50px;
+      margin-top: 50px;
+      .dexImagesBox {
+        :last-child {
+          img {
+            padding-bottom: 20px !important;
+            content: '';
+            width: $imgSize;
+            background-color: #609880;
+            position: relative;
+            display: block;
+          }
+        }
+        z-index: 2;
+        width: fit-content;
+        height: $dexHeight;
+        /* margin: 0 0.8em 0 0; */
+        float: left;
+        .dexPicture {
+          z-index: 1;
+          width: fit-content;
+          margin: 0;
+          height: $imgSize;
+          img {
+            z-index: 1;
+            height: $imgSize;
+            width: $imgSize;
+            position: relative;
+            image-rendering: pixelated;
+            object-fit: cover;
+            object-position: 0 15%;
+          }
+        }
+
+        /* :last-child {
         img {
           
         }
       } */
-    }
-    .dexEntriesBox {
-      float: left;
-      margin-right: 0.8em;
+      }
+      .dexEntriesBox {
+        float: left;
+        margin-right: 0.8em;
 
-      .dexEntry {
-        margin-top: calc(($imgSize/(1024/425) / 2));
-        padding-bottom: calc(($imgSize/(1024/425) / 2));
-        width: 100%;
-
-        .dexData {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          // Remove button styling
-          background: none;
-          color: inherit;
-          border: none;
-          padding: 0;
-          font: inherit;
-          cursor: pointer;
-          outline: inherit;
-
+        .dexEntry {
+          margin-top: calc(($imgSize/(1024/425) / 2));
+          padding-bottom: calc(($imgSize/(1024/425) / 2));
           width: 100%;
-          font-size: calc($imgSize / 4) + 'px';
-          // Egg
-          img {
-            width: 2px;
-          }
-        }
-        transition: all 1s ease-in-out;
-        background-color: #eff739;
-        border: 0px;
 
-        .pokemonName {
-          position: relative;
-          float: right;
-        }
-        :hover {
-          transition: linear;
-          background-color: white;
-          border-radius: 13px;
+          .dexData {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            // Remove button styling
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+
+            width: 100%;
+            font-size: calc($imgSize / 4);
+            // Egg
+            img {
+              width: 2px;
+            }
+            h1 {
+              font-size: calc($imgSize / 4);
+            }
+          }
+          transition: all 1s ease-in-out;
+          background-color: #eff739;
+          border: 0px;
+
+          .pokemonName {
+            position: relative;
+            float: right;
+          }
+          :hover {
+            transition: linear;
+            background-color: white;
+            border-radius: 13px;
+          }
         }
       }
     }
   }
-}
 
-.infoBackground {
-  height: 100%;
-  width: 100vw;
+  .infoBackground {
+    height: 100%;
+    width: 100vw;
 
-  .backButton {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    color: white;
-    span {
-      font-size: 5rem;
-      width: fit-content;
-      position: relative;
-      top: $imgSize;
-    }
-  }
-  .editButton {
-    background: none;
-    color: inherit;
-    border: none;
-
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    color: black;
-
-    span {
-      font-size: 2rem;
-    }
-  }
-
-  .dexPicture {
-    z-index: 1;
-    width: fit-content;
-    margin: auto;
-    height: $imgSize;
-    img {
-      z-index: 1;
-      height: $imgSize;
-      width: $imgSize;
-      position: relative;
-      image-rendering: pixelated;
-      object-fit: cover;
-      object-position: 0 15%;
-    }
-  }
-  .infoBox {
-    margin: auto;
-    padding: 2em;
-    width: 80%;
-    background-color: white;
-    text-align: center;
-  }
-  .releaseButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-
-    button {
-      background-color: #000;
-
+    .backButton {
+      background: none;
       color: inherit;
       border: none;
-      padding: 2px;
+      padding: 0;
       font: inherit;
       cursor: pointer;
       outline: inherit;
-      border-radius: 5px;
       color: white;
-      font-size: 25px;
-      margin-bottom: 1em;
+      span {
+        font-size: 5rem;
+        width: fit-content;
+        position: relative;
+        top: $imgSize;
+      }
     }
+    .editButton {
+      background: none;
+      color: inherit;
+      border: none;
+
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      color: black;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    .dexPicture {
+      z-index: 1;
+      width: fit-content;
+      margin: auto;
+      height: $imgSize;
+      img {
+        z-index: 1;
+        height: $imgSize;
+        width: $imgSize;
+        position: relative;
+        image-rendering: pixelated;
+        object-fit: cover;
+        object-position: 0 15%;
+      }
+    }
+    .infoBox {
+      margin: auto;
+      padding: 2em;
+      width: 80%;
+      background-color: white;
+      text-align: center;
+    }
+    .releaseButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1em;
+
+      button {
+        background-color: #000;
+
+        color: inherit;
+        border: none;
+        padding: 2px;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        border-radius: 5px;
+        color: white;
+        font-size: 25px;
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+$imgSize: 64px;
+@include styling($imgSize);
+@media (min-width: 801px) {
+  $imgSize: 128px;
+  @include styling($imgSize);
+  .pokedex-title {
+    max-width: 60%;
   }
 }

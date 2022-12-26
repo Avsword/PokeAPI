@@ -452,16 +452,6 @@
   padding-right: 0;
   border-radius: 0px 0px 20px 0px;
   box-shadow: inset 0 -1.33em #fafafa;
-  /*   .textField {
-    width: fit-content;
-    left: $imgSize;
-    margin-left: 6px;
-    position: relative;
-    top: -$imgSize;
-    input {
-      width: 50px;
-    }
-  } */
 }
 @supports (border-image-source: none) {
   .addNewPokemon .addMainBox {
@@ -473,6 +463,7 @@
   top: 20px;
   right: 128px;
   width: 116.3636363636px;
+  background-color: #e5e5e5;
 }
 .addNewPokemon .addMainBox .imagePreview {
   height: 128px;
@@ -523,6 +514,13 @@
 .addNewPokemon .addMainBox .primaryTyping input,
 .addNewPokemon .addMainBox .secondaryTyping input {
   width: 100px;
+  background-color: #e5e5e5;
+}
+.addNewPokemon .addMainBox .idField select,
+.addNewPokemon .addMainBox .textField select,
+.addNewPokemon .addMainBox .primaryTyping select,
+.addNewPokemon .addMainBox .secondaryTyping select {
+  background-color: #e5e5e5;
 }
 
 .addDescription {

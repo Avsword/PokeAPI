@@ -256,6 +256,7 @@ export default function Search() {
     <>
       <div className='searchBox'>
         <div className='selection'>
+          <label>Search method:</label>
           <select
             value={searchType}
             onChange={(eventObject) => {
@@ -276,6 +277,7 @@ export default function Search() {
     <div>
       <div className='searchBox'>
         <div className='selection'>
+          <label>Search method:</label>
           <select
             value={searchType}
             onChange={(eventObject) => {
