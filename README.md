@@ -5,6 +5,12 @@ The backend follows the MVC model and Airbnb's formatting guide (which I will no
 The styling is heavily inspired by Pokémon Emerald's Pokédex.
 
 # Screenshots
+Mobile
+![image](https://user-images.githubusercontent.com/90607504/209718115-88158071-916a-4600-8632-0a63dd10d649.png)
+Breakpoint at 600px
+![image](https://user-images.githubusercontent.com/90607504/209718148-92403aa9-2caa-44c0-beb7-c1dc4c43a2f1.png)
+Breakpoint at 1024px
+![image](https://user-images.githubusercontent.com/90607504/209718166-7fc660e0-f7ac-43b2-a31e-0771eaa20127.png)
 
 # How to use?
 
@@ -126,9 +132,9 @@ npm run test
 
 # Tech and main frameworks used
 
-The backend uses [Node.js] (https://nodejs.org/en/) and [Express] (https://expressjs.com/)
+The backend uses [Node.js](https://nodejs.org/en/) and [Express](https://expressjs.com/)
 
-And the frontend uses [React] (https://reactjs.org/), [Axios](https://axios-http.com/docs/intro) and [Scss](https://sass-lang.com/)
+And the frontend uses [React](https://reactjs.org/), [Axios](https://axios-http.com/docs/intro) and [Scss](https://sass-lang.com/)
 
 # Contribute
 
