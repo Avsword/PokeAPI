@@ -6,11 +6,14 @@ The styling is heavily inspired by Pokémon Emerald's Pokédex.
 
 # Screenshots
 Mobile
-<img src="(https://user-images.githubusercontent.com/90607504/209718115-88158071-916a-4600-8632-0a63dd10d649.png" alt="mobile view" width="200"/>
+<img src="https://user-images.githubusercontent.com/90607504/209718115-88158071-916a-4600-8632-0a63dd10d649.png" alt="mobile view" width="200"/>
+<br />
 Breakpoint at 600px
 <img src="https://user-images.githubusercontent.com/90607504/209718148-92403aa9-2caa-44c0-beb7-c1dc4c43a2f1.png" alt="tablet view" width="300"/>
+<br />
 Breakpoint at 1024px
 <img src="https://user-images.githubusercontent.com/90607504/209718166-7fc660e0-f7ac-43b2-a31e-0771eaa20127.png" alt="desktop view" width="400"/>
+<br />
 
 # How to use?
 
