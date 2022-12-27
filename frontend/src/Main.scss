@@ -219,19 +219,14 @@
   }
 }
 
-$imgSize: 48px;
+$imgSize: 64px;
 @include styling($imgSize);
 
-@media (min-width: 480px) {
-  $imgSize: 48px;
+@media screen and (min-width: 600px) {
+  $imgSize: 96px;
   @include styling($imgSize);
 }
-
-@media (min-width: 600px) {
-  $imgSize: 64px;
-  @include styling($imgSize);
-}
-@media (min-width: 801px) {
+@media screen and (min-width: 801px) {
   $imgSize: 128px;
   @include styling($imgSize);
   .pokedex-title {

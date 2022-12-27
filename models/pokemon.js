@@ -1,6 +1,5 @@
 // TODO: Never use airbnb eslint again :D
 /* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable comma-dangle */
 /* eslint-disable no-unused-expressions */
 
 /*
@@ -27,7 +26,7 @@ const pokemonModel = {
         id,
         (err, result) => {
           err ? reject(err) : resolve(result);
-        }
+        },
       );
     }),
   postNewPokemon: (pokemon) =>
@@ -59,7 +58,7 @@ const pokemonModel = {
         ],
         (err, result) => {
           err ? reject(err) : resolve(result);
-        }
+        },
       );
     }),
   getAllWithPrimaryTyping: (typing) =>
@@ -69,7 +68,7 @@ const pokemonModel = {
         typing,
         (err, result) => {
           err ? reject(err) : resolve(result);
-        }
+        },
       );
     }),
   getWithinHeightRange: (min, max) =>
@@ -79,7 +78,7 @@ const pokemonModel = {
         [min, max],
         (err, result) => {
           err ? reject(err) : resolve(result);
-        }
+        },
       );
     }),
   getWithinWeightRange: (min, max) =>
@@ -89,7 +88,7 @@ const pokemonModel = {
         [min, max],
         (err, result) => {
           err ? reject(err) : resolve(result);
-        }
+        },
       );
     }),
   getByName: (name) =>
@@ -99,7 +98,7 @@ const pokemonModel = {
         name,
         (err, result) => {
           err ? reject(err) : resolve(result);
-        }
+        },
       );
     }),
 };

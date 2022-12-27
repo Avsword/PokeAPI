@@ -1,0 +1,55 @@
+GET https://pokedex-api-88gv.onrender.com/api/pokemon HTTP/1.1
+
+
+
+###
+GET https://pokedex-api-88gv.onrender.com/api/pokemon/2000 HTTP/1.1
+
+
+//Get by typing
+###
+GET https://pokedex-api-88gv.onrender.com/api/pokemon/typing/grass HTTP/1.1¨
+
+###
+GET https://pokedex-api-88gv.onrender.com/api/pokemon/typing/test HTTP/1.1
+
+//Get within a height range
+###
+GET https://pokedex-api-88gv.onrender.com/api/pokemon/height/0.6&6 HTTP/1.1
+
+###
+POST https://pokedex-api-88gv.onrender.com/api/pokemon HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "posted",
+    "imgurl": "https://elements-cover-images-0.imgix.net/df403ae4-755d-495e-9dfd-97e6e964ecb9?auto=compress%2Cformat&fit=max&w=1170&s=a3ac4bcbd3f921d99e0eab9252ba3a6f",
+    "description": "This has been posted from REST file",
+    "primarytyping": "Normal",
+    "secondarytyping": null,
+    "height": 100,
+    "weight": null,
+    "ID": 3002
+}
+
+###
+PUT https://pokedex-api-88gv.onrender.com/api/pokemon HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Updated",
+    "imgurl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Felements.envato.com%2Fneutral-face-LYQ7W5&psig=AOvVaw0p5Kjckkw83BKN3LbQxxLl&ust=1670435051292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKiVktHF5fsCFQAAAAAdAAAAABAE",
+    "description": "This has been posted and updated from REST file",
+    "primarytyping": "Normal",
+    "secondarytyping": "null",
+    "height": 6,
+    "weight": null,
+    "ID": 3002
+}
+
+
+###
+DELETE https://pokedex-api-88gv.onrender.com/api/pokemon/3002
+
+###
+GET https://pokedex-api-88gv.onrender.com/api/pokemon/3002 HTTP/1.1

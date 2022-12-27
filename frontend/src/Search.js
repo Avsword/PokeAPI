@@ -11,6 +11,7 @@ export default function Search() {
   const [name, setName] = useState('');
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(999);
+  const [loader, setLoader] = useState(false);
 
   const setData = (pokemon) => {
     if (Array.isArray(pokemon)) {
@@ -74,7 +75,7 @@ export default function Search() {
               ? `This Pokémon weighs ${pokemon.weight} kilograms and it's height is unknown`
               : `The weight for this pokémon is ${pokemon.weight} KG and it's ${pokemon.height} meters tall!`}
           </div>
-        </div>
+        </div>,
       );
     }
   };
@@ -85,9 +86,12 @@ export default function Search() {
       await axios
         .get(`https://pokedex-api-88gv.onrender.com/api/pokemon/${id}`)
         .then((res) => {
+          setLoader(true);
           setData(res.data);
         })
-        .then(() => {})
+        .then(() => {
+          setLoader(false);
+        })
         .catch((error) => {
           errorfunction(error);
         });
@@ -96,10 +100,9 @@ export default function Search() {
       e.preventDefault();
       await axios
         .get(
-          `https://pokedex-api-88gv.onrender.com/api/pokemon/name/${name.toLowerCase()}`
+          `https://pokedex-api-88gv.onrender.com/api/pokemon/name/${name.toLowerCase()}`,
         )
         .then((res) => {
-          console.log(res);
           setData(res.data[0]);
         })
         .then(() => {})
@@ -109,13 +112,12 @@ export default function Search() {
     };
     const getByHeight = async (e) => {
       e.preventDefault();
-      await console.log(min, max);
+
       await axios
         .get(
-          `https://pokedex-api-88gv.onrender.com/api/pokemon/height/${min}&${max}`
+          `https://pokedex-api-88gv.onrender.com/api/pokemon/height/${min}&${max}`,
         )
         .then((res) => {
-          console.log(res);
           setData(res.data);
         })
         .then(() => {})
@@ -125,13 +127,12 @@ export default function Search() {
     };
     const getByWeight = async (e) => {
       e.preventDefault();
-      await console.log(min, max);
+
       await axios
         .get(
-          `https://pokedex-api-88gv.onrender.com/api/pokemon/weight/${min}&${max}`
+          `https://pokedex-api-88gv.onrender.com/api/pokemon/weight/${min}&${max}`,
         )
         .then((res) => {
-          console.log(res);
           setData(res.data);
         })
         .then(() => {})
@@ -158,7 +159,7 @@ export default function Search() {
               ></input>
               <input type={'submit'} value='Search!'></input>
             </form>
-          </div>
+          </div>,
         );
         break;
       case 'name':
@@ -178,7 +179,7 @@ export default function Search() {
               ></input>
               <input type={'submit'} value='Search!'></input>
             </form>
-          </div>
+          </div>,
         );
         break;
       case 'height':
@@ -211,7 +212,7 @@ export default function Search() {
               <br></br>
               <input type={'submit'} value='Search!'></input>
             </form>
-          </div>
+          </div>,
         );
         break;
       case 'weight':
@@ -244,7 +245,7 @@ export default function Search() {
               <br></br>
               <input type={'submit'} value='Search!'></input>
             </form>
-          </div>
+          </div>,
         );
         break;
       default:
@@ -294,7 +295,7 @@ export default function Search() {
         {Display}
       </div>
 
-      {!displaydata ? <Svg></Svg> : displaydata}
+      {loader ? <Svg></Svg> : displaydata}
     </div>
   );
 }

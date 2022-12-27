@@ -209,7 +209,7 @@ input {
   margin-left: 0.25em;
 }
 
-@media (min-width: 801px) {
+@media screen and (min-width: 801px) {
   $boxWidth: 40%;
   .addNewPokemon {
     width: $boxWidth;

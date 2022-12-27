@@ -54,7 +54,7 @@ $imgSize: 128px;
   align-items: center;
   justify-content: center;
   height: fit-content;
-  margin-top: 2em;
+  margin: 2em 0;
   @include pixel-borders(
     $corner-size: 2,
     $border-size: 2px,
@@ -85,7 +85,7 @@ $imgSize: 128px;
   }
 }
 
-@media (min-width: 801px) {
+@media screen and (min-width: 801px) {
   .idMain,
   .searchBox {
     margin: 2em auto;

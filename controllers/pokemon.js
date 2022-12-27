@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 /*
  In the MVC Pattern, the controller is kind of at the centre of it all.
  It acts in the middle of the model and view to process all logic and incoming requests.

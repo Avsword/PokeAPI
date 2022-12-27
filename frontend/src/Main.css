@@ -440,7 +440,7 @@
 .Main .pokedex-title h1 {
   margin: 0px;
   padding: 1em;
-  font-size: 24px;
+  font-size: 32px;
 }
 .Main .dex {
   z-index: 1;
@@ -476,12 +476,12 @@
   width: -moz-fit-content;
   width: fit-content;
   margin: 0;
-  height: 48px;
+  height: 64px;
 }
 .Main .dex .dexImagesBox .dexPicture img {
   z-index: 1;
-  height: 48px;
-  width: 48px;
+  height: 64px;
+  width: 64px;
   position: relative;
   -ms-interpolation-mode: nearest-neighbor;
       image-rendering: -moz-crisp-edges;
@@ -516,14 +516,14 @@
   cursor: pointer;
   outline: inherit;
   width: 100%;
-  font-size: 12px;
-  height: 48px;
+  font-size: 16px;
+  height: 64px;
 }
 .Main .dex .dexEntriesBox .dexEntry .dexData img {
   width: 2px;
 }
 .Main .dex .dexEntriesBox .dexEntry .dexData h1 {
-  font-size: 12px;
+  font-size: 16px;
   margin-left: 10px;
 }
 .Main .dex .dexEntriesBox .dexEntry .pokemonName {
@@ -551,12 +551,12 @@
   color: white;
 }
 .infoBackground .backButton span {
-  font-size: 48px;
+  font-size: 64px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  top: 48px;
+  top: 64px;
 }
 .infoBackground .editButton {
   background: none;
@@ -575,13 +575,13 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 48px;
+  height: 64px;
   margin: auto;
 }
 .infoBackground .dexPicture img {
   z-index: 1;
-  height: 48px;
-  width: 48px;
+  height: 64px;
+  width: 64px;
   position: relative;
   -ms-interpolation-mode: nearest-neighbor;
       image-rendering: -moz-crisp-edges;
@@ -617,7 +617,7 @@
   margin-bottom: 1em;
 }
 
-@media (min-width: 480px) {
+@media screen and (min-width: 600px) {
   .Main {
     height: 100%;
     /*   background-image: linear-gradient(
@@ -663,229 +663,7 @@
   .Main .pokedex-title h1 {
     margin: 0px;
     padding: 1em;
-    font-size: 24px;
-  }
-  .Main .dex {
-    z-index: 1;
-    position: relative;
-    /*  top: -25vh; */
-    height: 80vh;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    overflow-y: scroll;
-    margin: auto;
-    background-color: #eff739;
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
-  .Main .dex .dexImagesBox {
-    z-index: 2;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: 80vh;
-    /* margin: 0 0.8em 0 0; */
-    float: left;
-    /* :last-child {
-      img {
-
-      }
-    } */
-  }
-  .Main .dex .dexImagesBox .dexPicture {
-    z-index: 1;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0;
-    height: 48px;
-  }
-  .Main .dex .dexImagesBox .dexPicture img {
-    z-index: 1;
-    height: 48px;
-    width: 48px;
-    position: relative;
-    -ms-interpolation-mode: nearest-neighbor;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: pixelated;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 0 15%;
-       object-position: 0 15%;
-  }
-  .Main .dex .dexEntriesBox {
-    float: left;
-    margin-right: 0.8em;
-  }
-  .Main .dex .dexEntriesBox .dexEntry {
-    /*  margin-top: calc(($imgSize/(1024/425) / 2));
-    padding-bottom: calc(($imgSize/(1024/425) / 2)); */
-    width: 100%;
-    transition: background-color 0.4s ease-in-out;
-    transition: border-radius 0.4s ease-in-out;
-    background-color: #eff739;
-    border-radius: 0px;
-  }
-  .Main .dex .dexEntriesBox .dexEntry .dexData {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    width: 100%;
-    font-size: 12px;
-    height: 48px;
-  }
-  .Main .dex .dexEntriesBox .dexEntry .dexData img {
-    width: 2px;
-  }
-  .Main .dex .dexEntriesBox .dexEntry .dexData h1 {
-    font-size: 12px;
-    margin-left: 10px;
-  }
-  .Main .dex .dexEntriesBox .dexEntry .pokemonName {
-    position: relative;
-    float: right;
-  }
-  .Main .dex .dexEntriesBox .dexEntry :hover {
-    transition: background-color 0.4s ease-in-out;
-    background-color: white;
-    border-radius: 13px;
-  }
-  .infoBackground {
-    height: 100%;
-    width: 100vw;
-  }
-  .infoBackground .backButton {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    color: white;
-  }
-  .infoBackground .backButton span {
     font-size: 48px;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    position: relative;
-    top: 48px;
-  }
-  .infoBackground .editButton {
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    color: black;
-  }
-  .infoBackground .editButton span {
-    font-size: 2rem;
-  }
-  .infoBackground .dexPicture {
-    z-index: 1;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: 48px;
-    margin: auto;
-  }
-  .infoBackground .dexPicture img {
-    z-index: 1;
-    height: 48px;
-    width: 48px;
-    position: relative;
-    -ms-interpolation-mode: nearest-neighbor;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: pixelated;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 0 15%;
-       object-position: 0 15%;
-  }
-  .infoBackground .infoBox {
-    margin: auto;
-    padding: 2em;
-    width: 80%;
-    background-color: white;
-    text-align: center;
-  }
-  .infoBackground .releaseButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-  }
-  .infoBackground .releaseButton button {
-    background-color: #000;
-    color: inherit;
-    border: none;
-    padding: 2px;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    border-radius: 5px;
-    color: white;
-    margin-bottom: 1em;
-  }
-}
-@media (min-width: 600px) {
-  .Main {
-    height: 100%;
-    /*   background-image: linear-gradient(
-      180deg,
-      #7ba573 25%,
-      #4a7342 25%,
-      #4a7342 50%,
-      #7ba573 50%,
-      #7ba573 75%,
-      #4a7342 75%,
-      #4a7342 100%
-    ); */
-  }
-  .Main .pokedex-title {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #000;
-    border-image-slice: 4;
-    border-image-width: 2;
-    border-image-outset: 0;
-    border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>");
-    border-style: solid;
-    border-width: 8px;
-    border-radius: 40px;
-    border-color: #000;
-    background-color: aliceblue;
-    background-clip: padding-box;
-    text-align: center;
-    margin: auto;
-    margin-top: 1em;
-  }
-  .Main .pokedex-title ::after {
-    content: "";
-    width: 500px;
-    height: 600px;
-    background: rgb(255, 0, 0);
-  }
-  @supports (border-image-source: none) {
-    .Main .pokedex-title {
-      border-radius: 12px;
-    }
-  }
-  .Main .pokedex-title h1 {
-    margin: 0px;
-    padding: 1em;
-    font-size: 32px;
   }
   .Main .dex {
     z-index: 1;
@@ -921,12 +699,12 @@
     width: -moz-fit-content;
     width: fit-content;
     margin: 0;
-    height: 64px;
+    height: 96px;
   }
   .Main .dex .dexImagesBox .dexPicture img {
     z-index: 1;
-    height: 64px;
-    width: 64px;
+    height: 96px;
+    width: 96px;
     position: relative;
     -ms-interpolation-mode: nearest-neighbor;
         image-rendering: -moz-crisp-edges;
@@ -961,14 +739,14 @@
     cursor: pointer;
     outline: inherit;
     width: 100%;
-    font-size: 16px;
-    height: 64px;
+    font-size: 24px;
+    height: 96px;
   }
   .Main .dex .dexEntriesBox .dexEntry .dexData img {
     width: 2px;
   }
   .Main .dex .dexEntriesBox .dexEntry .dexData h1 {
-    font-size: 16px;
+    font-size: 24px;
     margin-left: 10px;
   }
   .Main .dex .dexEntriesBox .dexEntry .pokemonName {
@@ -995,12 +773,12 @@
     color: white;
   }
   .infoBackground .backButton span {
-    font-size: 64px;
+    font-size: 96px;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     position: relative;
-    top: 64px;
+    top: 96px;
   }
   .infoBackground .editButton {
     background: none;
@@ -1019,13 +797,13 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    height: 64px;
+    height: 96px;
     margin: auto;
   }
   .infoBackground .dexPicture img {
     z-index: 1;
-    height: 64px;
-    width: 64px;
+    height: 96px;
+    width: 96px;
     position: relative;
     -ms-interpolation-mode: nearest-neighbor;
         image-rendering: -moz-crisp-edges;
@@ -1061,7 +839,7 @@
     margin-bottom: 1em;
   }
 }
-@media (min-width: 801px) {
+@media screen and (min-width: 801px) {
   .Main {
     height: 100%;
     /*   background-image: linear-gradient(

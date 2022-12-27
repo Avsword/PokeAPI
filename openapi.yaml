@@ -1,0 +1,257 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Pokédex API
+  description: A Simple Pokédex API for fetching, deleting and updating the Pokédex
+servers:
+  - url: https://pokedex-api-88gv.onrender.com/api
+
+paths:
+  /pokemon:
+    get:
+      summary: Get all of the Pokémon
+      description: >-
+        The get endpoint gives you an array of objects of all of the Pokémon
+        entered in the API Database
+      operationId: '1'
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ID:
+                      type: number
+                    name:
+                      type: string
+                    imgurl:
+                      type: string
+                    description:
+                      type: string
+                    primarytyping:
+                      type: string
+                    secondarytyping:
+                      type: string
+                    height:
+                      type: number
+                    weight:
+                      type: number
+        '500':
+          $ref: '#/components/responses/500Error'
+    post:
+      description: Creates a new pokemon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pokemon'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pokemon'
+        '400':
+          $ref: '#/components/responses/400Error'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+    put:
+      description: Update a pokemon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pokemon'
+      responses:
+        '201':
+          description: Updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pokemon'
+        '400':
+          $ref: '#/components/responses/400Error'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+  /pokemon/{id}:
+    get:
+      description: Get a pokemon by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pokemon'
+
+        '404':
+          description: Not found
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Sorry, could not find a Pokemon with that id :(
+        '500':
+          $ref: '#/components/responses/500Error'
+
+    delete:
+      description: delete a pokemon by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successfully deleted
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Pokemon deleted
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+  /pokemon/name/{name}:
+    get:
+      description: get a pokemon by name
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pokemon'
+        '404':
+          description: Not found
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: No matching name
+        '500':
+          $ref: '#/components/responses/500Error'
+
+  /pokemon/height/{min}&{max}:
+    get:
+      description: get a pokemon within a height range
+      parameters:
+        - name: min
+          in: path
+          required: true
+          schema:
+            type: number
+        - name: max
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pokemon'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+  /pokemon/weight/{min}&{max}:
+    get:
+      description: get a pokemon within a weight range
+      parameters:
+        - name: min
+          in: path
+          required: true
+          schema:
+            type: number
+        - name: max
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pokemon'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+components:
+  schemas:
+    Pokemon:
+      type: object
+      properties:
+        ID:
+          type: number
+        name:
+          type: string
+        imgurl:
+          type: string
+        description:
+          type: string
+        primarytyping:
+          type: string
+        secondarytyping:
+          type: string
+        height:
+          type: number
+        weight:
+          type: number
+
+  responses:
+    400Error:
+      description: Invalid request
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Invalid value
+    404Error:
+      description: Not found
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Not found
+    500Error:
+      description: Internal error
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Internal error
