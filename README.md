@@ -62,8 +62,8 @@ Search by...
 ```
 # Clone the repository on to your pc with SSH.
 # You can also use another method to clone it.
-git clone git@github.com:tiko-4A00EZ62/2022-wk49-final-project-Avsword.git
-cd 2022-wk49-final-project-Avsword/
+git clone git@github.com:Avsword/PokeAPI.git
+cd PokeAPI/
 # Install backend dependencies
 npm install
 # Go inside the frontend folder
