@@ -462,7 +462,6 @@
 .idMain {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -507,6 +506,7 @@
      object-fit: cover;
   -o-object-position: 0 15%;
      object-position: 0 15%;
+  float: left;
 }
 
 @media screen and (min-width: 801px) {

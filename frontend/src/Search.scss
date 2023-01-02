@@ -52,7 +52,7 @@ $imgSize: 128px;
 .idMain {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   height: fit-content;
   margin: 2em 0;
   @include pixel-borders(
@@ -81,6 +81,7 @@ $imgSize: 128px;
       image-rendering: pixelated;
       object-fit: cover;
       object-position: 0 15%;
+      float: left;
     }
   }
 }

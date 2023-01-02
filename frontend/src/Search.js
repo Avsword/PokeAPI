@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import errorfunction from './error';
 import { ReactComponent as Svg } from './images/loader.svg';
@@ -12,6 +12,80 @@ export default function Search() {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(999);
   const [loader, setLoader] = useState(false);
+
+  const getById = useCallback(
+    async (e) => {
+      e.preventDefault();
+      await axios
+        .get(`https://pokedex-api-88gv.onrender.com/api/pokemon/${id}`)
+        .then((res) => {
+          setLoader(true);
+          setData(res.data);
+        })
+        .then(() => {
+          setLoader(false);
+        })
+        .catch((error) => {
+          errorfunction(error);
+        });
+    },
+    [id],
+  );
+
+  const getByName = useCallback(
+    async (e) => {
+      e.preventDefault();
+      await axios
+        .get(
+          `https://pokedex-api-88gv.onrender.com/api/pokemon/name/${name.toLowerCase()}`,
+        )
+        .then((res) => {
+          setData(res.data[0]);
+        })
+        .then(() => {})
+        .catch((error) => {
+          errorfunction(error);
+        });
+    },
+    [name],
+  );
+
+  const getByHeight = useCallback(
+    async (e) => {
+      e.preventDefault();
+
+      await axios
+        .get(
+          `https://pokedex-api-88gv.onrender.com/api/pokemon/height/${min}&${max}`,
+        )
+        .then((res) => {
+          setData(res.data);
+        })
+        .then(() => {})
+        .catch((error) => {
+          errorfunction(error);
+        });
+    },
+    [min, max],
+  );
+  const getByWeight = useCallback(
+    async (e) => {
+      e.preventDefault();
+
+      await axios
+        .get(
+          `https://pokedex-api-88gv.onrender.com/api/pokemon/weight/${min}&${max}`,
+        )
+        .then((res) => {
+          setData(res.data);
+        })
+        .then(() => {})
+        .catch((error) => {
+          errorfunction(error);
+        });
+    },
+    [min, max],
+  );
 
   const setData = (pokemon) => {
     if (Array.isArray(pokemon)) {
@@ -80,67 +154,6 @@ export default function Search() {
     }
   };
   useEffect(() => {
-    //getById returns only one
-    const getById = async (e) => {
-      e.preventDefault();
-      await axios
-        .get(`https://pokedex-api-88gv.onrender.com/api/pokemon/${id}`)
-        .then((res) => {
-          setLoader(true);
-          setData(res.data);
-        })
-        .then(() => {
-          setLoader(false);
-        })
-        .catch((error) => {
-          errorfunction(error);
-        });
-    };
-    const getByName = async (e) => {
-      e.preventDefault();
-      await axios
-        .get(
-          `https://pokedex-api-88gv.onrender.com/api/pokemon/name/${name.toLowerCase()}`,
-        )
-        .then((res) => {
-          setData(res.data[0]);
-        })
-        .then(() => {})
-        .catch((error) => {
-          errorfunction(error);
-        });
-    };
-    const getByHeight = async (e) => {
-      e.preventDefault();
-
-      await axios
-        .get(
-          `https://pokedex-api-88gv.onrender.com/api/pokemon/height/${min}&${max}`,
-        )
-        .then((res) => {
-          setData(res.data);
-        })
-        .then(() => {})
-        .catch((error) => {
-          errorfunction(error);
-        });
-    };
-    const getByWeight = async (e) => {
-      e.preventDefault();
-
-      await axios
-        .get(
-          `https://pokedex-api-88gv.onrender.com/api/pokemon/weight/${min}&${max}`,
-        )
-        .then((res) => {
-          setData(res.data);
-        })
-        .then(() => {})
-        .catch((error) => {
-          errorfunction(error);
-        });
-    };
-
     switch (searchType) {
       case 'id':
         setDisplay(
@@ -251,7 +264,17 @@ export default function Search() {
       default:
         break;
     }
-  }, [searchType, id, name, min, max]);
+  }, [
+    searchType,
+    id,
+    name,
+    min,
+    max,
+    getById,
+    getByName,
+    getByHeight,
+    getByWeight,
+  ]);
 
   return !displaydata ? (
     <>

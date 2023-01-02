@@ -39,13 +39,13 @@
       margin-top: 1em;
       h1 {
         margin: 0px;
-        padding: 1em;
-        font-size: calc($imgSize / 2);
+        padding: 0.5em;
+        font-size: calc($imgSize / 4);
       }
     }
 
     .dex {
-      $dexHeight: 80vh;
+      $dexHeight: 60vh;
       z-index: 1;
       position: relative;
       /*  top: -25vh; */
@@ -219,7 +219,7 @@
   }
 }
 
-$imgSize: 64px;
+$imgSize: 80px;
 @include styling($imgSize);
 
 @media screen and (min-width: 600px) {

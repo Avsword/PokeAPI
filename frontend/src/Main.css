@@ -439,14 +439,14 @@
 }
 .Main .pokedex-title h1 {
   margin: 0px;
-  padding: 1em;
-  font-size: 32px;
+  padding: 0.5em;
+  font-size: 20px;
 }
 .Main .dex {
   z-index: 1;
   position: relative;
   /*  top: -25vh; */
-  height: 80vh;
+  height: 60vh;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -461,7 +461,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 80vh;
+  height: 60vh;
   /* margin: 0 0.8em 0 0; */
   float: left;
   /* :last-child {
@@ -476,12 +476,12 @@
   width: -moz-fit-content;
   width: fit-content;
   margin: 0;
-  height: 64px;
+  height: 80px;
 }
 .Main .dex .dexImagesBox .dexPicture img {
   z-index: 1;
-  height: 64px;
-  width: 64px;
+  height: 80px;
+  width: 80px;
   position: relative;
   -ms-interpolation-mode: nearest-neighbor;
       image-rendering: -moz-crisp-edges;
@@ -516,14 +516,14 @@
   cursor: pointer;
   outline: inherit;
   width: 100%;
-  font-size: 16px;
-  height: 64px;
+  font-size: 20px;
+  height: 80px;
 }
 .Main .dex .dexEntriesBox .dexEntry .dexData img {
   width: 2px;
 }
 .Main .dex .dexEntriesBox .dexEntry .dexData h1 {
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 10px;
 }
 .Main .dex .dexEntriesBox .dexEntry .pokemonName {
@@ -551,12 +551,12 @@
   color: white;
 }
 .infoBackground .backButton span {
-  font-size: 64px;
+  font-size: 80px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  top: 64px;
+  top: 80px;
 }
 .infoBackground .editButton {
   background: none;
@@ -575,13 +575,13 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 64px;
+  height: 80px;
   margin: auto;
 }
 .infoBackground .dexPicture img {
   z-index: 1;
-  height: 64px;
-  width: 64px;
+  height: 80px;
+  width: 80px;
   position: relative;
   -ms-interpolation-mode: nearest-neighbor;
       image-rendering: -moz-crisp-edges;
@@ -662,14 +662,14 @@
   }
   .Main .pokedex-title h1 {
     margin: 0px;
-    padding: 1em;
-    font-size: 48px;
+    padding: 0.5em;
+    font-size: 24px;
   }
   .Main .dex {
     z-index: 1;
     position: relative;
     /*  top: -25vh; */
-    height: 80vh;
+    height: 60vh;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -684,7 +684,7 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    height: 80vh;
+    height: 60vh;
     /* margin: 0 0.8em 0 0; */
     float: left;
     /* :last-child {
@@ -884,14 +884,14 @@
   }
   .Main .pokedex-title h1 {
     margin: 0px;
-    padding: 1em;
-    font-size: 64px;
+    padding: 0.5em;
+    font-size: 32px;
   }
   .Main .dex {
     z-index: 1;
     position: relative;
     /*  top: -25vh; */
-    height: 80vh;
+    height: 60vh;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -906,7 +906,7 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    height: 80vh;
+    height: 60vh;
     /* margin: 0 0.8em 0 0; */
     float: left;
     /* :last-child {
