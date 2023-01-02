@@ -62,8 +62,8 @@ Search by...
 ```
 # Clone the repository on to your pc with SSH.
 # You can also use another method to clone it.
-git clone git@github.com:tiko-4A00EZ62/2022-wk49-final-project-Avsword.git
-cd 2022-wk49-final-project-Avsword/
+git clone git@github.com:Avsword/PokeAPI.git
+cd PokeAPI/
 # Install backend dependencies
 npm install
 # Go inside the frontend folder
@@ -149,22 +149,7 @@ Big thanks to Github user @NigelOToole for creating the SCSS mixin for pixelated
 
 TAMK
 
-# Evaluation (For Mr. Botha)
 
-- Design (20)
-  - I thought out every single API endpoint before I started working on this, so I'd say this was well thought out.
-- Execution (30)
-  - Backend is running on Render and I haven't had any difficulties with API requests // gotten weird responses.
-- Requirement satisfaction (20)
-  - The project - at least in my opinion - is more complicated than the expense tracking API and has more endpoints etc. I'd say it satisfies the requirements.
-- Coding Style (20 or 12)
-  - I commented the backend code fairly thoroughly, but I understand if I get deducted 8 points for the eslint disables. That's my fault for using the Airbnb linter.
-- Documentation (15)
-  - I always try to make the README's and the documentation good, even though I don't enjoy doing it. That being said, I still did a good job and I documented every single endpoint and proofread it.
-- Bonus Credit (15)
-  - The frontend is passable in my opinion. I did use an external scss mixin, which is why the repository shows that I have more CSS than I have JS, but. It is what it is. I like making frontends and I enjoy the Pokémon Emerald -theme I made for it.
-- %Total: 100% or 93%
-  - Depending on if the coding style is deductible
 
 # License
 
