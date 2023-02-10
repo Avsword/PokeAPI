@@ -18,8 +18,12 @@ Breakpoint at 1024px
 # How to use?
 
 ## Addresses
-
+NOTE: Chances are, that the web service will "cold start" when you try to access it.
+<br />
+This is fine, just give it some time and it'll eventually load. It's worth it, trust me :)
+<br />
 The public frontend address: https://pokedex-api-88gv.onrender.com/
+<br />
 The public backend address: https://pokedex-api-88gv.onrender.com/api/pokemon/
 
 ## Main Page
